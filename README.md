@@ -41,9 +41,9 @@ mkdir /usr/local/etc/dnscrypt-proxy
 cp example-dnscrypt-proxy.toml /usr/local/etc/dnscrypt-proxy/dnscrypt-proxy.toml
 ```
 
-Edit dnscrypt-proxy as needed: `vi /usr/local/etc/dnscrypt-proxy/dnscrypt-proxy.toml`.
+Edit `/usr/local/etc/dnscrypt-proxy/dnscrypt-proxy.toml` as needed.
 
-Create blacklists, cloaking and forwarding rules as needed. This is a compact example of a configuration:
+Create blacklists, cloaking and forwarding rules as needed. This is a compact example of a configuration for use with dnsmasq:
 ```
 server_names = ['dnscrypt.eu-nl', 'dnscrypt.eu-dk']
 listen_addresses = ['127.0.0.2:53']
@@ -64,8 +64,7 @@ cache = false
   prefix = ''
 ```
 
-Create a start up script at `/usr/local/etc/rc.d/dnscrypt-proxy.sh`. Remember to `chmod +x dnscrypt-proxy.sh`.
-
+Create a start up script at `/usr/local/etc/rc.d/dnscrypt-proxy.sh`. Remember to `chmod +x dnscrypt-proxy.sh`:
 ```
 #!/bin/sh
  /usr/local/bin/dnscrypt-proxy -config /usr/local/etc/dnscrypt-proxy/dnscrypt-proxy.toml
